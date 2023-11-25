@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100vh;
+}
+
+body {
+    font-family: Arial;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    background-color: #000000;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+}
+
+.curtain {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("curtain.jpg");
+    background-size: cover;
+    background-position: bottom;
+    transition: transform 0.2s ease;
+    z-index: 100;
+}
+
+.curtain:hover {
+    transform: translateY(-5%);
+}
+
+.curtain.remove {
+    transition: transform 1s ease;
+    transform: translateY(-100%);
+}
+
+
+.objects {
+    display: grid;
+    gap: 100px;
+}
+
+.objects-lamp {
+    justify-content: center;
+}
+
+.lamp-image {
+    width: 300px;
+    height: 300px;
+}
+
+.lamp-image img {
+    z-index: 10;
+}
+
+.tail{
+    position: absolute;
+    top:-5px;
+    left: calc(36%);
+}
+
+.lamp-without-tail{
+    position: absolute;
+    top:0;
+    left: calc(36%);
+}
+.lamp{
+    position: absolute;
+    top:0;
+    left: calc(36%);
+}
+
+.light {
+    border-bottom: 650px solid yellow;
+    border-left: 400px solid transparent;
+    border-right: 400px solid transparent;
+    width: 900px;
+    height: 0;
+    position: absolute;
+    top: 68px;
+    left: calc(50% - 460px);
+    z-index: 15;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.light.on {
+    visibility: visible;
+    opacity: 0.5;
+}
+
+
+.objects-requisite {
+    margin-top:70%;
+    display: none;
+}
+
+.objects-requisite.display {
+    display: flex;
+}
+
+.objects-wizard {
+    flex: 0 0 70%;
+}
+
+.focus {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.objects-focus {
+    flex: 0 0 30%;
+}
+
+.objects-bird, .objects-rabbit {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 20%;
+    visibility: visible;
+    opacity: 0.5;
+    transition: all 0.5s ease;
+    z-index: 10;
+}
+
+.bird-clickable, .rabbit-clickable {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 20%;
+    visibility: visible;
+    opacity: 0.5;
+    transition: all 0.8s ease;
+    z-index: 20;
+}
+
+.objects-bird.hide, .objects-rabbit.hide, .bird-clickable.hide, .rabbit-clickable.hide {
+    top: 40%;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.objects-hat {
+    max-width: 120px;
+    max-height: 120px;
+}
